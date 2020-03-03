@@ -20,7 +20,7 @@ namespace XEngine
 		}
 		public static Stream Load(string resourceName)
 		{
-			var executingAssembly = Assembly.GetExecutingAssembly();
+			var executingAssembly = Assembly.GetEntryAssembly();
 			var pathToDots = resourceName.Replace("\\", ".").Replace("/", ".");
 			var location = string.Format("{0}.{1}", executingAssembly.GetName().Name.Replace('-', '_'), pathToDots);
 			return executingAssembly.GetManifestResourceStream(location);
