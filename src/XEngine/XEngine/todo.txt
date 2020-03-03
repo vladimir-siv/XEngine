@@ -1,0 +1,2 @@
+-Fix camera full parent rotation sum
+-Optimize marshaling of GeometricShape indices
