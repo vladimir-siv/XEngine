@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>NanoTech.pfx</AssemblyOriginatorKeyFile>
@@ -120,7 +120,7 @@
     <Compile Include="XEngine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BuiltIn\Shaders\skybox.glsl" />
+    <EmbeddedResource Include="BuiltIn\Shaders\skybox.glsl" />
     <None Include="NanoTech.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
