@@ -26,7 +26,7 @@ namespace XEngine
 			return executingAssembly.GetManifestResourceStream(location);
 		}
 
-		internal static string LoadInternalShader(string shaderName) => LoadInternalFile($"XEngine/BuiltIn/Shaders/{shaderName}.glsl");
+		internal static string LoadInternalShader(string shaderName) => LoadInternalFile($"BuiltIn/Shaders/{shaderName}.glsl");
 
 		internal static string LoadInternalFile(string fileName)
 		{
