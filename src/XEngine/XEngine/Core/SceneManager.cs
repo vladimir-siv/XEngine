@@ -13,7 +13,7 @@ namespace XEngine.Core
 
 		static SceneManager()
 		{
-			foreach (var type in Assembly.GetExecutingAssembly().GetTypes().Where(t => t.IsClass && !t.IsAbstract && typeof(Scene).IsAssignableFrom(t)))
+			foreach (var type in Assembly.GetCallingAssembly().GetTypes().Where(t => t.IsClass && !t.IsAbstract && typeof(Scene).IsAssignableFrom(t)))
 			{
 				var genSceneAttr = type.GetCustomAttributes(typeof(GenerateSceneAttribute), false);
 				if (genSceneAttr.Length == 0) continue;

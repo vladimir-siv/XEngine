@@ -40,7 +40,7 @@ namespace XEngine
 		}
 		internal static Stream LoadInternal(string resourceName)
 		{
-			var thisAssembly = typeof(ManifestResourceManager).Assembly;
+			var thisAssembly = Assembly.GetExecutingAssembly();
 			var pathToDots = resourceName.Replace("\\", ".").Replace("/", ".");
 			var location = string.Format("{0}.{1}", thisAssembly.GetName().Name.Replace('-', '_'), pathToDots);
 			return thisAssembly.GetManifestResourceStream(location);
