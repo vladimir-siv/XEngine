@@ -21,7 +21,7 @@ namespace XEngine
 
 			Input.Init();
 
-			foreach (var type in Assembly.GetExecutingAssembly().GetTypes().Where(t => t.IsClass))
+			foreach (var type in Assembly.GetCallingAssembly().GetTypes().Where(t => t.IsClass))
 			{
 				var engActivateAttr = type.GetCustomAttributes(typeof(XEngineActivationAttribute), false);
 				if (engActivateAttr.Length == 0) continue;
