@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 
 using SharpGL;
 
@@ -61,6 +62,8 @@ namespace XEngine
 		internal static Dictionary<string, Texture> Textures { get; } = new Dictionary<string, Texture>();
 
 		internal static Shader SkyboxShader { get; set; } = null;
+
+		public static Form RenderingForm => GLControl.ParentForm;
 
 		public static void Draw()
 		{
