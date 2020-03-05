@@ -20,9 +20,10 @@ namespace XEngine.Common
 
 	public static class RNG
 	{
-		private static Random rng = new Random();
+		private static readonly Random rng = new Random();
 
 		public static double Double() => rng.NextDouble();
+		public static double Double(double min, double max) => min + Double() * (max - min);
 		public static int Int(int maxValue) => rng.Next(maxValue);
 	}
 }
