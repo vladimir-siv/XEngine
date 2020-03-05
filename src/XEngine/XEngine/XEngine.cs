@@ -41,6 +41,7 @@ namespace XEngine
 		{
 			if (XEngineContext.GLControl == null) return;
 			foreach (var scene in Scene.SceneCache) scene.Value._Exit();
+			XEngineContext.OnShutdown();
 			XEngineContext.Graphics.UseProgram(0);
 			foreach (var shader in XEngineContext.Shaders) shader.Value.Clean();
 			XEngineContext.Shaders.Clear();
@@ -55,6 +56,9 @@ namespace XEngine
 
 	public static class XEngineContext
 	{
+		public static event Action Shutdown;
+		internal static void OnShutdown() => Shutdown?.Invoke();
+
 		internal static OpenGLControl GLControl { get; set; } = null;
 		internal static OpenGL Graphics => GLControl.OpenGL;
 

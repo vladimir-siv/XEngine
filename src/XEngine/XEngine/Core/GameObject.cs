@@ -128,11 +128,15 @@ namespace XEngine.Core
 			gl.DrawElements(mesh.shape.OpenGLShapeType, mesh.shape.IndexCount, OpenGL.GL_UNSIGNED_INT, IntPtr.Zero);
 		}
 
+		public void Discard() => SceneManager.CurrentScene.Remove(this);
+
 		public void Dispose()
 		{
 			Destroy();
 			parent = null;
 			mesh = null;
+			material = null;
+			properties = null;
 		}
 	}
 }

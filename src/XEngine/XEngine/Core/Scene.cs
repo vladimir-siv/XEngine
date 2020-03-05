@@ -166,6 +166,13 @@ namespace XEngine.Core
 				gameObject.Start();
 			}
 		}
+		public void Remove(GameObject gameObject)
+		{
+			if (GameObjects.Remove(gameObject))
+			{
+				gameObject.Dispose();
+			}
+		}
 		public void ClearGameObjects()
 		{
 			foreach (var gameObject in GameObjects) gameObject.Dispose();
